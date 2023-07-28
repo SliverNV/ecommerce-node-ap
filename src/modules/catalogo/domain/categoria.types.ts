@@ -2,7 +2,7 @@
 //Auxilia na criação de invariantes e modelos ricos
 interface ICategoria {
     id?: string;
-    nome:string;
+    nome: string;
 }
 
 //Atributos que são necessários para criar uma categoria
