@@ -1,3 +1,5 @@
+import { Categoria } from "../categoria/categoria.entity";
+
 //Todos os atributos/propriedades que um produto deve ter no sistema
 //Auxilia na criação de invariantes e modelos ricos
 interface IProduto {
@@ -5,7 +7,7 @@ interface IProduto {
     nome: string;
     descricao: string;
     valor: number;
-    categorias: number;
+    categorias: Array<Categoria>;
 }
 
 //Atributos que são necessários para criar um produto

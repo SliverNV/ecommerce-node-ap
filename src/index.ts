@@ -1,5 +1,5 @@
-import { Categoria } from "./modules/catalogo/domain/categoria.entity";
-import { RecuperarCategoriaProps } from "./modules/catalogo/domain/categoria.types";
+import { Categoria } from "./modules/catalogo/domain/categoria/categoria.entity";
+import { RecuperarCategoriaProps } from "./modules/catalogo/domain/categoria/categoria.types";
 import { CategoriaMap } from "./modules/catalogo/mappers/categoria.map";
 import { DomainException } from "./shared/domain/domain.exception";
 import { readFile, writeFile } from "fs";

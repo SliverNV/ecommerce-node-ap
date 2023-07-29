@@ -1,23 +1,22 @@
-import { Produto } from "../domain/produto.entity"
-import { ICategoria, RecuperarCategoriaProps } from "../domain/categoria.types";
-import { IProduto } from "../domain/produto.types";
+import { Produto } from "../domain/produto/produto.entity"
+import { IProduto, RecuperarProdutoProps } from "../domain/produto/produto.types";
 
 class ProdutoMap {
 
     public static toDTO(produto: Produto): IProduto {
         return {
           id: produto.id,
-          nome: produto.nome
-          descricao: string;
-          valor: number;
-          pNumero: number;
+          nome: produto.nome,
+          descricao: produto.descricao,
+          valor: produto.valor,
+          categorias: produto.categorias
         }
     }
 
-    public static toDomain(produto: RecuperarCategoriaProps): Produto {
+    public static toDomain(produto: RecuperarProdutoProps): Produto {
         return Produto.recuperar(produto);
     }
-
+    
 }
 
 export { ProdutoMap }

@@ -1,7 +1,11 @@
 import { IProduto, CriarProdutoProps, RecuperarProdutoProps } from "./produto.types" ;
-import { NomeProdutoTamanhoMinimoInvalido, NomeProdutoTamanhoMaximoInvalido, DescricaoProdutoTamanhoMinimoInvalido, DescricaoProdutoTamanhoMaximoInvalido,
-    PrecoProdutoValorMinimoInvalido, ProdutoNumeroMinimoCategoriaInvalido, ProdutoNumeroMaximoCategoriaInvalido } from "./produto.exception";
-import { Entity } from "../../../shared/domain/entity";
+import {
+    NomeProdutoTamanhoMinimoInvalido, NomeProdutoTamanhoMaximoInvalido,
+    DescricaoProdutoTamanhoMinimoInvalido, DescricaoProdutoTamanhoMaximoInvalido,
+    PrecoProdutoValorMinimoInvalido, ProdutoNumeroMinimoCategoriaInvalido,
+    ProdutoNumeroMaximoCategoriaInvalido } from "./produto.exception";
+import { Entity } from "../../../../shared/domain/entity";
+import { Categoria } from "../categoria/categoria.entity";
 
 class Produto extends Entity<IProduto> implements IProduto {
 
@@ -12,8 +16,8 @@ class Produto extends Entity<IProduto> implements IProduto {
     private _nome: string;
     private _descricao: string;
     private _valor: number;
-    private _pNumero: number;
-    
+    private _categorias: Array<Categoria>;
+            
     ///////////////
 	//Gets e Sets//
 	///////////////
@@ -59,19 +63,19 @@ class Produto extends Entity<IProduto> implements IProduto {
         this._valor = value;
     }
 
-    public get pNumero(): number {
-        return this._pNumero;
+    public get categorias(): Array<Categoria> {
+        return this._categorias;
     }
-    private set pNumero(value: number) {
-        if (value < 1) {
+    private set categorias(value: Array<Categoria>) {
+        if (value.length < 1) {
             throw new ProdutoNumeroMinimoCategoriaInvalido();
         }
 
-        if (value > 3) {
+        if (value.length > 3) {
             throw new ProdutoNumeroMaximoCategoriaInvalido();
         }
 
-        this._pNumero = value;
+        this._categorias = value;
     }
 
     //////////////
@@ -83,7 +87,7 @@ class Produto extends Entity<IProduto> implements IProduto {
         this.nome = produto.nome;
         this.descricao = produto.descricao;
         this.valor = produto.valor;
-        this.pNumero = produto.pNumero;
+        this.categorias = produto.categorias;
     }
 
     /////////////////////////
