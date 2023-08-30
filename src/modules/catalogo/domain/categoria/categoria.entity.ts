@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import { ICategoria, CriarCategoriaProps, RecuperarCategoriaProps } from "./categoria.types";
 import { NomeCategoriaNuloOuIndefinido, NomeCategoriaTamanhoMinimoInvalido, NomeCategoriaTamanhoMaximoInvalido } from "./categoria.exception";
 import { randomUUID } from "crypto";
 import { Entity } from "../../../../shared/domain/entity";
 import { CategoriaMap } from "../../mappers/categoria.map";
+=======
+import { CategoriaMap } from "@modules/catalogo/mappers/categoria.map";
+import { Entity } from "@shared/domain/entity";
+import { NomeCategoriaNuloOuIndefinido, NomeCategoriaTamanhoMaximoInvalido, NomeCategoriaTamanhoMinimoInvalido } from "./categoria.exception";
+import { CriarCategoriaProps, ICategoria, RecuperarCategoriaProps } from "./categoria.types";
+>>>>>>> 29ac4bd (Commit refatorando e configurando)
 
 class Categoria extends Entity<ICategoria> implements ICategoria {
 
@@ -68,4 +75,8 @@ class Categoria extends Entity<ICategoria> implements ICategoria {
 
 }
 
+<<<<<<< HEAD
 export { Categoria }
+=======
+export { Categoria };
+>>>>>>> 29ac4bd (Commit refatorando e configurando)

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import exp from "constants";
 import { DomainException } from "../../../../shared/domain/domain.exception";
+=======
+import { DomainException } from "@shared/domain/domain.exception";
+>>>>>>> 29ac4bd (Commit refatorando e configurando)
 
 class CategoriaException extends DomainException {
     constructor(message:string = '⚠️ Exceção de Domínio Genérica da Entidade Categoria') {
@@ -38,4 +42,8 @@ export {
     NomeCategoriaNuloOuIndefinido,
     NomeCategoriaTamanhoMinimoInvalido,
     NomeCategoriaTamanhoMaximoInvalido
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> 29ac4bd (Commit refatorando e configurando)

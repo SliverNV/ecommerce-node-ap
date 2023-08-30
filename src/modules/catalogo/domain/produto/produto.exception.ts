@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { DomainException } from "../../../../shared/domain/domain.exception";
+=======
+import { DomainException } from "@shared/domain/domain.exception";
+>>>>>>> 29ac4bd (Commit refatorando e configurando)
 
 class ProdutoException extends DomainException {
     constructor(message:string = '⚠️ Exceção de Domínio Genérica da Entidade Produto') {
@@ -64,7 +68,11 @@ class ProdutoNumeroMaximoCategoriaInvalido extends ProdutoException {
     }
 }
 
+<<<<<<< HEAD
 export { 
+=======
+export {
+>>>>>>> 29ac4bd (Commit refatorando e configurando)
     ProdutoException,
     NomeProdutoTamanhoMinimoInvalido,
     NomeProdutoTamanhoMaximoInvalido,
@@ -73,4 +81,8 @@ export {
     PrecoProdutoValorMinimoInvalido,
     ProdutoNumeroMinimoCategoriaInvalido,
     ProdutoNumeroMaximoCategoriaInvalido
+<<<<<<< HEAD
  }
+=======
+};
+>>>>>>> 29ac4bd (Commit refatorando e configurando)
