@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Produto } from "../domain/produto/produto.entity"
-=======
 import { Produto } from "../domain/produto/produto.entity";
->>>>>>> 29ac4bd (Commit refatorando e configurando)
 import { IProduto, RecuperarProdutoProps } from "../domain/produto/produto.types";
 
 class ProdutoMap {
@@ -23,8 +19,4 @@ class ProdutoMap {
     
 }
 
-<<<<<<< HEAD
-export { ProdutoMap }
-=======
 export { ProdutoMap };
->>>>>>> 29ac4bd (Commit refatorando e configurando)

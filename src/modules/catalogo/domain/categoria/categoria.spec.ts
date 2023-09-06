@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import { describe, expect, test } from 'vitest';
-import { CriarCategoriaProps, RecuperarCategoriaProps } from './categoria.types';
-import { Categoria } from './categoria.entity';
-import { NomeCategoriaTamanhoMaximoInvalido, NomeCategoriaTamanhoMinimoInvalido } from './categoria.exception';
-import { IDEntityUUIDInvalid } from '../../../../shared/domain/domain.exception';
-=======
 import { faker } from '@faker-js/faker';
 import { IDEntityUUIDInvalid } from '@shared/domain/domain.exception';
 import { beforeAll, describe, expect, test } from 'vitest';
@@ -33,7 +26,6 @@ beforeAll(async () => {
     UUIDInvalido = faker.string.alpha({length:{min:1,max:20}});
 
 });
->>>>>>> 29ac4bd (Commit refatorando e configurando)
 
 //Suite de Testes de Unidade - Entidade de Domínio
 //Usando a descrição, você pode definir como um conjunto de testes ou benchmarks relacionados
@@ -44,15 +36,9 @@ describe('Entidade de Domínio: Criar Categoria', () => {
 
         //Dado (Given)
         const categoriaValida: CriarCategoriaProps = {
-<<<<<<< HEAD
-            nome: 'cama'
-        };
-
-=======
             nome: nomeCategoriaValido
         };
        
->>>>>>> 29ac4bd (Commit refatorando e configurando)
         //Quando (When) e Então (Then)
         expect(Categoria.criar(categoriaValida))
             .to.be.instanceof(Categoria);
@@ -64,11 +50,7 @@ describe('Entidade de Domínio: Criar Categoria', () => {
         //Dado (Given)
         //Nome menor que três caracteres
         const categoriaNomeInvalido: CriarCategoriaProps = {
-<<<<<<< HEAD
-            nome: 'ca'
-=======
             nome: nomeCategoriaTamanhoMinInvalido
->>>>>>> 29ac4bd (Commit refatorando e configurando)
         };
 
         //Quando (When) e Então (Then)
@@ -82,11 +64,7 @@ describe('Entidade de Domínio: Criar Categoria', () => {
         //Dado (Given)
         //Nome maior que 50 caracteres
         const categoriaNomeInvalido: CriarCategoriaProps = {
-<<<<<<< HEAD
-            nome: '123456789123456789123456789123456789123456789123456'
-=======
             nome: nomeCategoriaTamanhoMaxInvalido
->>>>>>> 29ac4bd (Commit refatorando e configurando)
         };
 
         //Quando (When) e Então (Then)
@@ -103,13 +81,8 @@ describe('Entidade de Domínio: Recupear Categoria', () => {
 
         //Dado (Given)
         const categoriaValida: RecuperarCategoriaProps = {
-<<<<<<< HEAD
-            id: '5edbc79d-b724-4a39-a29b-0bfb2386920a',
-            nome: 'cama'
-=======
             id: UUIDValido,
             nome: nomeCategoriaValido
->>>>>>> 29ac4bd (Commit refatorando e configurando)
         };
 
         //Quando (When) e Então (Then)
@@ -123,13 +96,8 @@ describe('Entidade de Domínio: Recupear Categoria', () => {
         //Dado (Given)
         //Nome menor que três caracteres
         const categoriaIdInvalido: RecuperarCategoriaProps = {
-<<<<<<< HEAD
-            id: '1234',
-            nome: 'cama'
-=======
             id: UUIDInvalido,
             nome: nomeCategoriaValido
->>>>>>> 29ac4bd (Commit refatorando e configurando)
         };
 
         //Quando (When) e Então (Then)
@@ -143,13 +111,8 @@ describe('Entidade de Domínio: Recupear Categoria', () => {
         //Dado (Given)
         //Nome menor que três caracteres
         const categoriaNomeInvalido: RecuperarCategoriaProps = {
-<<<<<<< HEAD
-            id: '5edbc79d-b724-4a39-a29b-0bfb2386920a',
-            nome: 'ma'
-=======
             id: UUIDValido,
             nome: nomeCategoriaTamanhoMinInvalido
->>>>>>> 29ac4bd (Commit refatorando e configurando)
         };
 
         //Quando (When) e Então (Then)
@@ -163,13 +126,8 @@ describe('Entidade de Domínio: Recupear Categoria', () => {
         //Dado (Given)
         //Nome maior que 50 caracteres
         const categoriaNomeInvalido: RecuperarCategoriaProps = {
-<<<<<<< HEAD
-            id: '5edbc79d-b724-4a39-a29b-0bfb2386920a',
-            nome: '123456789123456789123456789123456789123456789123456'
-=======
             id: UUIDValido,
             nome: nomeCategoriaTamanhoMaxInvalido
->>>>>>> 29ac4bd (Commit refatorando e configurando)
         };
 
         //Quando (When) e Então (Then)

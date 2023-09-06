@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import { IProduto, CriarProdutoProps, RecuperarProdutoProps } from "./produto.types" ;
-import {
-    NomeProdutoTamanhoMinimoInvalido, NomeProdutoTamanhoMaximoInvalido,
-    DescricaoProdutoTamanhoMinimoInvalido, DescricaoProdutoTamanhoMaximoInvalido,
-    PrecoProdutoValorMinimoInvalido, ProdutoNumeroMinimoCategoriaInvalido,
-    ProdutoNumeroMaximoCategoriaInvalido } from "./produto.exception";
-import { Entity } from "../../../../shared/domain/entity";
-import { Categoria } from "../categoria/categoria.entity";
-=======
 import { ProdutoMap } from "@modules/catalogo/mappers/produto.map";
 import { Entity } from "@shared/domain/entity";
 import { Categoria } from "../categoria/categoria.entity";
@@ -21,7 +11,6 @@ import {
     ProdutoNumeroMinimoCategoriaInvalido
 } from "./produto.exception";
 import { CriarProdutoProps, IProduto, RecuperarProdutoProps } from "./produto.types";
->>>>>>> 29ac4bd (Commit refatorando e configurando)
 
 class Produto extends Entity<IProduto> implements IProduto {
 
@@ -118,11 +107,6 @@ class Produto extends Entity<IProduto> implements IProduto {
         return new Produto(props);
     }
 
-<<<<<<< HEAD
-}
-
-export { Produto }
-=======
     ///////////
     //Métodos//
     ///////////
@@ -134,4 +118,3 @@ export { Produto }
 }
 
 export { Produto };
->>>>>>> 29ac4bd (Commit refatorando e configurando)

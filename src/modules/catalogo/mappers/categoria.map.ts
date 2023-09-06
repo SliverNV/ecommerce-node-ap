@@ -16,8 +16,4 @@ class CategoriaMap {
 
 }
 
-<<<<<<< HEAD
-export { CategoriaMap }
-=======
 export { CategoriaMap };
->>>>>>> 29ac4bd (Commit refatorando e configurando)
