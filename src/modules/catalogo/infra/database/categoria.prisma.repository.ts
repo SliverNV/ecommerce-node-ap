@@ -2,12 +2,10 @@ import { Categoria } from "@modules/catalogo/domain/categoria/categoria.entity";
 import { ICategoriaRepository } from "@modules/catalogo/domain/categoria/categoria.repository.interface";
 import { CategoriaMap } from "@modules/catalogo/mappers/categoria.map";
 import { PrismaRepository } from "@shared/infra/database/prisma.repository";
-import exp from "constants";
 
 class CategoriaPrismaRepository extends PrismaRepository implements ICategoriaRepository<Categoria> {
-    
+   
     async recuperarPorUuid(uuid: string): Promise<Categoria | null> {
-        
         const categoriaRecuperada = await this._datasource.categoria.findUnique(
             {
                 where: {
@@ -16,10 +14,7 @@ class CategoriaPrismaRepository extends PrismaRepository implements ICategoriaRe
             }
         )
         if (categoriaRecuperada) {
-            return CategoriaMap.toDomain({
-                id: categoriaRecuperada.id,
-                nome: categoriaRecuperada.nome
-            })
+            return CategoriaMap.fromPrismaModelToDomain(categoriaRecuperada);
         }
         return null;
     }
@@ -27,19 +22,15 @@ class CategoriaPrismaRepository extends PrismaRepository implements ICategoriaRe
     async recuperarTodos(): Promise<Array<Categoria>> {
         const categoriasRecuperadas = await this._datasource.categoria.findMany();
         const categorias = categoriasRecuperadas.map(
-            (categoria) => CategoriaMap.toDomain({
-                    id: categoria.id,
-                    nome: categoria.nome
-                }
-            )
-        )
+            (categoria) => CategoriaMap.fromPrismaModelToDomain(categoria)
+        );
         return categorias;
     }
 
     async existe(uuid: string): Promise<boolean> {
         const categoriaExistente = await this.recuperarPorUuid(uuid);
-        if (categoriaExistente){ return true;}
-        return false;
+		if (categoriaExistente)  {return true;}
+		return false;
     }
 
     async inserir(categoria: Categoria): Promise<Categoria> {

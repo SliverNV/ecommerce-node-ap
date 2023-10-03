@@ -18,33 +18,68 @@ async function main() {
 
     const categoriaRepo = new CategoriaPrismaRepository(prisma);
 
-    //const categoriaRecuperada = await categoriaRepo.recuperarPorUuid("c2666bdb-c055-40bb-951b-32f899f41e30");
+    ////////////////////////////////
+    //Recuperar Categoria por UUID//
+    ////////////////////////////////
+
+    //const categoriaRecuperada: Categoria | null = await categoriaRepo.recuperarPorUuid("f226854a-ede6-4784-adf6-cbb289991a12");
 
     //console.log(categoriaRecuperada);
 
+
+    //////////////////////////////
+    //Recuperar Todas Categorias//
+    //////////////////////////////
+
+    //const todasCategorias: Array<Categoria> = await categoriaRepo.recuperarTodos();
+
+    //console.log(todasCategorias);
+
+
+    /////////////////////////////////
+    //Verificar se Existe Categoria//
+    /////////////////////////////////
+
+    //const existeCategoria: boolean = await categoriaRepo.existe("f226854a-ede6-4784-adf6-cbb289991a12");
+
+    //console.log(existeCategoria);
+
+
+    /////////////////////
+    //Inserir Categoria//
+    /////////////////////
+
     //const categoria: Categoria = Categoria.criar({
-    //    nome:'Banho'
-    //})    
+    //   nome:'Sala e Quarto'
+    //});
 
     //const categoriaInserida = await categoriaRepo.inserir(categoria);
 
     //console.log(categoriaInserida);
 
-    //const categorias = await categoriaRepo.recuperarTodos();
 
-    //console.log(categorias);
+    ///////////////////////
+    //Atualizar Categoria//
+    ///////////////////////
 
     //const categoria = Categoria.recuperar({
-    //    id: "c2666bdb-c055-40bb-951b-32f899f41e30",
-    //    nome: "Mesa"
-    //})    
+    //   id: "f226854a-ede6-4784-adf6-cbb289991a12",
+    //   nome: "Banho"
+    //});
 
-    //const categoriaAtualizada = await categoriaRepo.atualizar(categoria.id,categoria);
+    //const atualizouCategoria: boolean = await categoriaRepo.atualizar(categoria.id,categoria);
 
-    //console.log(categoriaAtualizada)
+    //console.log(atualizouCategoria)
 
-    const categoriaDeletada = await categoriaRepo.deletar("c544a6d0-3595-4e88-b181-e56c3c86a7f9");
-    console.log(categoriaDeletada)
+
+    /////////////////////
+    //Deletar Categoria//
+    /////////////////////
+    
+    //const categoriaDeletada: boolean = await categoriaRepo.deletar("323eff3a-25d0-4a93-a011-6c258d10f2c3");
+    
+    //console.log(categoriaDeletada);
+
 
 }
 
