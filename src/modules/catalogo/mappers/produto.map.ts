@@ -12,7 +12,10 @@ class ProdutoMap {
             nome: produto.nome,
             descricao: produto.descricao,
             valor: produto.valor,
-            categorias: produto.categorias
+            categorias: produto.categorias,
+            dataCriacao: produto.dataCriacao,
+            dataAtualizacao: produto.dataAtualizacao,
+            dataExclusao: produto.dataExclusao
         }
     }
 
@@ -38,7 +41,10 @@ class ProdutoMap {
                 nome: produto.nome,
                 descricao: produto.descricao,
                 valor: produto.valor,
-                categorias: categorias
+                categorias: categorias,
+                dataCriacao: produto.dataCriacao,
+                dataAtualizacao: produto.dataAtualizacao,
+                dataExclusao: produto.dataExclusao
             }
         );
     }

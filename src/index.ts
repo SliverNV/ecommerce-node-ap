@@ -25,9 +25,9 @@ async function main() {
     //Recuperar Categoria por UUID//
     ////////////////////////////////
 
-    //const categoriaRecuperada: Categoria | null = await categoriaRepo.recuperarPorUuid("f226854a-ede6-4784-adf6-cbb289991a12");
+    // const categoriaRecuperada: Categoria | null = await categoriaRepo.recuperarPorUuid("13bfd8ff-8452-4984-9570-02c900a1a34f");
 
-    //console.log(categoriaRecuperada);
+    // console.log(categoriaRecuperada);
 
 
     //////////////////////////////
@@ -52,46 +52,47 @@ async function main() {
     //Inserir Categoria//
     /////////////////////
 
-    //const categoria: Categoria = Categoria.criar({
-    //   nome:'Cama'
-    //});
+    // const categoria: Categoria = Categoria.criar({
+    //    nome:'Cozinha'
+    // });
 
-    //const categoriaInserida = await categoriaRepo.inserir(categoria);
+    // const categoriaInserida = await categoriaRepo.inserir(categoria);
 
-    //console.log(categoriaInserida);
+    // console.log(categoriaInserida);
 
 
     ///////////////////////
     //Atualizar Categoria//
     ///////////////////////
 
-    //const categoria = Categoria.recuperar({
-    //   id: "f226854a-ede6-4784-adf6-cbb289991a12",
-    //   nome: "Banho"
-    //});
+    // const categoria = Categoria.recuperar({
+    //   id: "13bfd8ff-8452-4984-9570-02c900a1a34f",
+    //   nome: "Cozinha Americana"
+    // });
 
-    //const atualizouCategoria: boolean = await categoriaRepo.atualizar(categoria.id,categoria);
+    // const atualizouCategoria: boolean = await categoriaRepo.atualizar(categoria.id,categoria);
 
-    //console.log(atualizouCategoria)
+    // console.log(atualizouCategoria)
 
 
     /////////////////////
     //Deletar Categoria//
     /////////////////////
 
-    //const categoriaDeletada: boolean = await categoriaRepo.deletar("9e11cdf8-e0e2-4649-9f80-943b18deff66");
+    // const categoriaDeletada: boolean = await categoriaRepo.deletar("13bfd8ff-8452-4984-9570-02c900a1a34f");
 
-    //console.log(categoriaDeletada);
+    // console.log(categoriaDeletada);
 
 
     //////////////////////////////
     //Recuperar Produto por UUID//
     //////////////////////////////
 
-    //const produtoRecuperado: Produto | null = await produtoRepo.recuperarPorUuid("f226854a-ede6-4784-adf6-cbb289991a12");
+    // const produtoRecuperado: Produto | null = await produtoRepo.recuperarPorUuid("1aa1b385-6d70-486e-830b-4accef6dd144");
 
-    //console.log(produtoRecuperado);
+    // console.log(produtoRecuperado);
 
+    // console.log(produtoRecuperado?.estaDeletado());
 
     ///////////////////
     //Inserir Produto//
@@ -108,7 +109,7 @@ async function main() {
     // });
 
     // const produto: Produto = Produto.criar({
-    //    nome: 'Toalha de mesa',
+    //    nome: 'Toalha de Mesa',
     //    descricao: 'Toalha de Algodão',
     //    valor: 40,
     //    categorias: [categoria01, categoria02]
@@ -123,32 +124,32 @@ async function main() {
 	//Recuperar Todos os Produtos e Suas Categorias//
 	/////////////////////////////////////////////////
 		
-	//const todosProdutos: Array<Produto> = await produtoRepo.recuperarTodos();
+	// const todosProdutos: Array<Produto> = await produtoRepo.recuperarTodos();
 
-	//console.log(todosProdutos);
+	// console.log(todosProdutos);
 
 
     ///////////////////////////////////////////////
 	//Atualizar Produto - Sem Atulizar Categorias//
 	///////////////////////////////////////////////
 
-    //const produto = {
-    //    id: "457282e8-7c06-4903-91d6-2d21f197a748",
-    //    nome: "Toalha de Cozinha",
+    // const produto = {
+    //    id: "1aa1b385-6d70-486e-830b-4accef6dd144",
+    //    nome: "Toalha de Cama",
     //    descricao: "Toalha de Algodão",
-    //    valor: 200
-    //}; 
+    //    valor: 85
+    // }; 
 
-    //const atualizouProduto: boolean = await produtoRepo.atualizar(produto.id,produto);
+    // const atualizouProduto: boolean = await produtoRepo.atualizar(produto.id,produto);
 
 
     ///////////////////
 	//Deletar Produto//
 	///////////////////
 		
-	//const produtoDeletado: boolean = await produtoRepo.deletar("29afd3c9-0b4e-4eae-b44d-84538a2da264");
+	// const produtoDeletado: boolean = await produtoRepo.deletar("0bd8dd01-47aa-47b7-a098-a774f3946b29");
 
-	//console.log(produtoDeletado);
+	// console.log(produtoDeletado);
 
 
     /////////////////////
