@@ -64,13 +64,53 @@ class ProdutoNumeroMaximoCategoriaInvalido extends ProdutoException {
     }
 }
 
+class ProdutoJaPossuiQtdMaximaCategorias extends ProdutoException {
+    public constructor(message:string = '⚠️ O produto já possui a quantidade máxima de categorias.') {
+        super(message);
+        this.name = 'ProdutoJaPossuiQtdMaximaCategorias'
+        this.message = message;
+    }
+}
+
+class ProdutoJaPossuiCategoriaInformada extends ProdutoException {
+    public constructor(message:string = '⚠️ O produto já possui a categoria informada.') {
+        super(message);
+        this.name = 'ProdutoJaPossuiCategoriaInformada'
+        this.message = message;
+    }
+}
+
+class ProdutoJaPossuiQtdMinimaCategorias extends ProdutoException {
+    public constructor(message:string = '⚠️ O produto já possui a quantidade mínima de categorias.') {
+        super(message);
+        this.name = 'ProdutoJaPossuiQtdMinimaCategorias'
+        this.message = message;
+    }
+}
+
+class ProdutoNaoPossuiCategoriaInformada extends ProdutoException {
+    public constructor(message:string = '⚠️ O produto não possui a categoria informada.') {
+        super(message);
+        this.name = 'ProdutoNaoPossuiCategoriaInformada'
+        this.message = message;
+    }
+}
+
+const ProdutoExceptions = {
+    ProdutoException: ProdutoException,
+    NomeProdutoTamanhoMinimoInvalido: NomeProdutoTamanhoMinimoInvalido,
+    NomeProdutoTamanhoMaximoInvalido: NomeProdutoTamanhoMaximoInvalido,
+    DescricaoProdutoTamanhoMinimoInvalido: DescricaoProdutoTamanhoMinimoInvalido,
+    DescricaoProdutoTamanhoMaximoInvalido: DescricaoProdutoTamanhoMaximoInvalido,
+    PrecoProdutoValorMinimoInvalido: PrecoProdutoValorMinimoInvalido,
+    ProdutoNumeroMinimoCategoriaInvalido:ProdutoNumeroMinimoCategoriaInvalido,
+    ProdutoNumeroMaximoCategoriaInvalido: ProdutoNumeroMaximoCategoriaInvalido,
+    ProdutoJaPossuiQtdMaximaCategorias: ProdutoJaPossuiQtdMaximaCategorias,
+    ProdutoJaPossuiCategoriaInformada: ProdutoJaPossuiCategoriaInformada,
+    ProdutoJaPossuiQtdMinimaCategorias: ProdutoJaPossuiQtdMinimaCategorias,
+    ProdutoNaoPossuiCategoriaInformada: ProdutoNaoPossuiCategoriaInformada
+}
+
 export {
-    ProdutoException,
-    NomeProdutoTamanhoMinimoInvalido,
-    NomeProdutoTamanhoMaximoInvalido,
-    DescricaoProdutoTamanhoMinimoInvalido,
-    DescricaoProdutoTamanhoMaximoInvalido,
-    PrecoProdutoValorMinimoInvalido,
-    ProdutoNumeroMinimoCategoriaInvalido,
-    ProdutoNumeroMaximoCategoriaInvalido
+    ProdutoExceptions
 };

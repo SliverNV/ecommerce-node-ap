@@ -1,5 +1,6 @@
 import { Categoria } from '@modules/catalogo/domain/categoria/categoria.entity';
 import { Produto } from '@modules/catalogo/domain/produto/produto.entity';
+import { StatusProduto } from '@modules/catalogo/domain/produto/produto.types';
 import { CategoriaPrismaRepository } from '@modules/catalogo/infra/database/categoria.prisma.repository';
 import { ProdutoPrismaRepository } from '@modules/catalogo/infra/database/produto.prisma.repository';
 import { PrismaClient } from '@prisma/client';
@@ -99,20 +100,20 @@ async function main() {
     ///////////////////
 
     // const categoria01: Categoria = Categoria.recuperar({
-    //    id: "d3059bb1-767c-4f2a-8f9a-acd4b22c1d65",
-    //    nome: "Sala"
+    //    id: "2bfddfb4-6545-4b4b-95f0-daffed38cfe5",
+    //    nome: "Cozinha"
     // });
 
     // const categoria02: Categoria = Categoria.recuperar({
-    //    id: "0c47e94d-2932-4b1e-a9cf-fa5d6f424a4e",
+    //    id: "0629ee7a-5063-4565-bc97-363248fac22d",
     //    nome: "Banho"
     // });
 
     // const produto: Produto = Produto.criar({
-    //    nome: 'Toalha de Mesa',
-    //    descricao: 'Toalha de Algodão',
-    //    valor: 40,
-    //    categorias: [categoria01, categoria02]
+    //    nome: 'Pano de Prato',
+    //    descricao: 'Algodão fio 60',
+    //    valor: 30,
+    //    categorias: [categoria01]
     // });
 
     // const produtoInserido = await produtoRepo.inserir(produto);
@@ -150,6 +151,50 @@ async function main() {
 	// const produtoDeletado: boolean = await produtoRepo.deletar("0bd8dd01-47aa-47b7-a098-a774f3946b29");
 
 	// console.log(produtoDeletado);
+
+
+    ////////////////////////////////////////////
+	//Adicionar e Remover Categoria ao Produto//
+	////////////////////////////////////////////
+		
+	// const produtoRecuperado: Produto | null = await produtoRepo.recuperarPorUuid("26684b74-97f0-489c-87ad-ba0c40574f2b");
+
+    // const categoriaRecuperada: Categoria | null = await categoriaRepo.recuperarPorUuid("2bfddfb4-6545-4b4b-95f0-daffed38cfe5");
+
+	// if (produtoRecuperado && categoriaRecuperada) {
+
+    //     //Adicionar//
+    //     if (produtoRecuperado.adicionarCategoria(categoriaRecuperada)) {
+    //         await produtoRepo.adicionarCategoria(produtoRecuperado, categoriaRecuperada);
+    //     }
+
+    //     //Remover//
+    //     // if (produtoRecuperado.removerCategoria(categoriaRecuperada)){
+    //     //     await produtoRepo.removerCategoria(produtoRecuperado, categoriaRecuperada);
+    //     // }
+
+    // }
+
+
+    //////////////////////////
+    //Alterar Status Produto//
+    //////////////////////////
+
+    // const produtoRecuperado: Produto | null = await produtoRepo.recuperarPorUuid("0a504b91-889b-449a-a707-4ce910132c42");
+
+    // if (produtoRecuperado) {
+    //    const alterouStatusProduto: boolean = await produtoRepo.alterarStatus(produtoRecuperado,StatusProduto.ATIVO)
+    //    console.log(alterouStatusProduto);
+    // }
+
+
+    ////////////////////////////////////
+	//Recuperar Produtos por Categoria//
+	////////////////////////////////////
+			
+	// const todosProdutosPorCategoria: Array<Produto> = await produtoRepo.recuperarPorCategoria("2bfddfb4-6545-4b4b-95f0-daffed38cfe5");
+
+	// console.log(todosProdutosPorCategoria);
 
 
     /////////////////////
