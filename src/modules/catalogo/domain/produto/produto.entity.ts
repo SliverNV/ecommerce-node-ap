@@ -1,4 +1,4 @@
-import { ProdutoMap } from "@modules/catalogo/mappers/produto.map";
+import { ProdutoMap } from "@modules/catalogo/infra/mappers/produto.map";
 import { Entity } from "@shared/domain/entity";
 import { Categoria } from "../categoria/categoria.entity";
 import { ProdutoExceptions } from "./produto.exception";
@@ -24,6 +24,11 @@ class Produto extends Entity<IProduto> implements IProduto {
 	//Constantes//
 	//////////////
 
+    public static readonly TAMANHO_MINIMO_NOME = 5;
+	public static readonly TAMANHO_MAXIMO_NOME = 50;
+    public static readonly TAMANHO_MINIMO_DESCRICAO = 10;
+	public static readonly TAMANHO_MAXIMO_DESCRICAO = 200;
+    public static readonly VALOR_MINIMO = 0;
     public static readonly QTD_MINIMA_CATEGORIAS = 1; 
     public static readonly QTD_MAXIMA_CATEGORIAS = 3;
      
@@ -35,57 +40,66 @@ class Produto extends Entity<IProduto> implements IProduto {
     public get nome(): string {
         return this._nome;
     }
-    private set nome(value: string) {
-        if (value.trim().length < 5) {
+    private set nome(nome: string) {
+        
+        const tamanhoNome = nome.trim().length;
+        
+        if (tamanhoNome < Produto.TAMANHO_MINIMO_NOME) {
             throw new ProdutoExceptions.NomeProdutoTamanhoMinimoInvalido();
         }
 
-        if (value.trim().length > 50) {
+        if (tamanhoNome > Produto.TAMANHO_MAXIMO_NOME) {
             throw new ProdutoExceptions.NomeProdutoTamanhoMaximoInvalido();
         }
 
-        this._nome = value;
+        this._nome = nome;
     }
 
     public get descricao(): string {
         return this._descricao;
     }
-    private set descricao(value: string) {
-        if (value.trim().length < 10) {
+    private set descricao(descricao: string) {
+        
+        const tamanhoDescricao = descricao.trim().length;
+
+        if (tamanhoDescricao < Produto.TAMANHO_MINIMO_DESCRICAO) {
             throw new ProdutoExceptions.DescricaoProdutoTamanhoMinimoInvalido();
         }
 
-        if (value.trim().length > 200) {
+        if (tamanhoDescricao > Produto.TAMANHO_MAXIMO_DESCRICAO) {
             throw new ProdutoExceptions.DescricaoProdutoTamanhoMaximoInvalido();
         }
 
-        this._descricao = value;
+        this._descricao = descricao;
     }
 
     public get valor(): number {
         return this._valor;
     }
-    private set valor(value: number) {
-        if (value < 0) {
+    private set valor(valor: number) {
+        if (valor < Produto.VALOR_MINIMO) {
             throw new ProdutoExceptions.PrecoProdutoValorMinimoInvalido();
         }
 
-        this._valor = value;
+        this._valor = valor;
     }
 
     public get categorias(): Array<Categoria> {
         return this._categorias;
     }
-    private set categorias(value: Array<Categoria>) {
-        if (value.length < Produto.QTD_MINIMA_CATEGORIAS) {
+    private set categorias(categorias: Array<Categoria>) {
+
+        const qtdCategorias = categorias.length;
+
+        if (qtdCategorias < Produto.QTD_MINIMA_CATEGORIAS) {
             throw new ProdutoExceptions.ProdutoNumeroMinimoCategoriaInvalido();
         }
 
-        if (value.length > Produto.QTD_MAXIMA_CATEGORIAS) {
+        if (qtdCategorias > Produto.QTD_MAXIMA_CATEGORIAS) {
             throw new ProdutoExceptions.ProdutoNumeroMaximoCategoriaInvalido();
         }
 
-        this._categorias = value;
+        this._categorias = categorias;
     }
 
     public get dataCriacao(): Date | undefined {
@@ -186,14 +200,20 @@ class Produto extends Entity<IProduto> implements IProduto {
     }
 
     public removerCategoria(categoria: Categoria): Categoria {
-        if (this.quantidadeCategorias() <= Produto.QTD_MINIMA_CATEGORIAS) {
+
+        const qtdCategoriasDoProduto: number = this.quantidadeCategorias();
+
+        if (qtdCategoriasDoProduto <= Produto.QTD_MINIMA_CATEGORIAS) {
             throw new ProdutoExceptions.ProdutoJaPossuiQtdMinimaCategorias();
         }
 
-        if (!this.possuiCategoria(categoria)) {
+        const produtoNaoPossuiCategoria: boolean = !this.possuiCategoria(categoria);
+
+        if (produtoNaoPossuiCategoria) {
             throw new ProdutoExceptions.ProdutoNaoPossuiCategoriaInformada();
         }
 
+        //Removendo uma categoria do array
         this.categorias.filter((categoriaExistente, index, arrayCategorias) => {
             if (categoriaExistente.id === categoria.id) {
                 arrayCategorias.splice(index, 1)
