@@ -1,6 +1,6 @@
 import { CategoriaMap } from "@modules/catalogo/infra/mappers/categoria.map";
 import { Entity } from "@shared/domain/entity";
-import { NomeCategoriaNuloOuIndefinido, NomeCategoriaTamanhoMaximoInvalido, NomeCategoriaTamanhoMinimoInvalido } from "./categoria.exception";
+import { CategoriaExceptions } from "./categoria.exception";
 import { CriarCategoriaProps, ICategoria, RecuperarCategoriaProps } from "./categoria.types";
 
 class Categoria extends Entity<ICategoria> implements ICategoria {
@@ -32,15 +32,15 @@ class Categoria extends Entity<ICategoria> implements ICategoria {
         const tamanhoNome = nome.trim().length;
 
         if (nome === null || nome === undefined) {
-            throw new NomeCategoriaNuloOuIndefinido();
+            throw new CategoriaExceptions.NomeCategoriaNuloOuIndefinido();
         }
 
         if (tamanhoNome < Categoria.TAMANHO_MINIMO_NOME) {
-            throw new NomeCategoriaTamanhoMinimoInvalido();
+            throw new CategoriaExceptions.NomeCategoriaTamanhoMinimoInvalido();
         }
 
         if (tamanhoNome > Categoria.TAMANHO_MAXIMO_NOME) {
-            throw new NomeCategoriaTamanhoMaximoInvalido();
+            throw new CategoriaExceptions.NomeCategoriaTamanhoMaximoInvalido();
         }
 
         this._nome = nome;
