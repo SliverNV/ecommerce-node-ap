@@ -96,30 +96,3 @@ describe('Repositório Prisma: Produto', () => {
             });    
             });
     });
-
-    // describe('Existe Produto', () => {
-
-    //     test('Deve Verificar se Existe Um Determinado Produto por UUID', async () => {
-
-    //         const produtoPrisma = {
-    //             id: 'UUIDValido',
-    //             nome: 'nomeProdutoValido',
-    //             descricao: 'descricaoValida',
-    //             valor: 0,
-    //             dataCriacao: faker.date.anytime(),
-    //             dataAtualizacao: faker.date.anytime(),
-    //             dataExclusao: faker.date.anytime(),
-    //             status: StatusProduto.ATIVO,
-    //         };
-
-    //         prismaMock.produto.findUnique.mockResolvedValue(produtoPrisma);
-
-    //         const existeProduto = await produtoRepositorio.existe(produtoPrisma.id);
-
-    //         expect(existeProduto).toBeTruthy();
-
-    //     });
-
-    // });
-
-
