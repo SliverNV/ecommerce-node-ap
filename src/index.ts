@@ -7,6 +7,7 @@ import { DomainException } from '@shared/domain/domain.exception';
 import { prisma } from '@main/infra/database/orm/prisma/client';
 import { categoriaRepositorio as categoriaRepo } from '@modules/catalogo/infra/database';
 import { produtoRepositorio as produtoRepo } from '@modules/catalogo/infra/database';
+import { atualizarCategoriaUseCase, atualizarProdutoUseCase, deletarCategoriaUseCase, deletarProdutoUseCase, inserirCategoriaUseCase, inserirProdutoUseCase, recuperarCategoriaPorIdUseCase, recuperarProdutoPorIdUseCase, recuperarTodasCategoriasUseCase, recuperarTodosProdutoUseCase } from '@modules/catalogo/application/use-case';
 
 
 async function main() {
@@ -22,94 +23,84 @@ async function main() {
     //Recuperar Categoria por UUID//
     ////////////////////////////////
 
-    // const categoriaRecuperada: Categoria | null = await categoriaRepo.recuperarPorUuid("13bfd8ff-8452-4984-9570-02c900a1a34f");
-
-    // console.log(categoriaRecuperada);
+    // console.log(await recuperarCategoriaPorIdUseCase.execute("fc59d6d0-bb22-4149-acdb-71b3ae751eff"));
 
 
     //////////////////////////////
     //Recuperar Todas Categorias//
     //////////////////////////////
 
-    // const todasCategorias: Array<Categoria> = await categoriaRepo.recuperarTodos();
-
-    // console.log(todasCategorias);
+    // console.log(await recuperarTodasCategoriasUseCase.execute());
 
 
     /////////////////////////////////
     //Verificar se Existe Categoria//
     /////////////////////////////////
 
-    //const existeCategoria: boolean = await categoriaRepo.existe("f226854a-ede6-4784-adf6-cbb289991a12");
+    // const existeCategoria: boolean = await categoriaRepo.existe("fc59d6d0-bb22-4149-acdb-71b3ae751eff");
 
-    //console.log(existeCategoria);
+    // console.log(existeCategoria);
 
 
     /////////////////////
     //Inserir Categoria//
     /////////////////////
 
-    // const categoria: Categoria = Categoria.criar({
-    //    nome:'Cozinha'
-    // });
-
-    // const categoriaInserida = await categoriaRepo.inserir(categoria);
-
-    // console.log(categoriaInserida);
+    // console.log(await inserirCategoriaUseCase.execute({
+    //     nome: 'Cozinha'
+    // }));
 
 
     ///////////////////////
     //Atualizar Categoria//
     ///////////////////////
 
-    // const categoria = Categoria.recuperar({
-    //   id: "13bfd8ff-8452-4984-9570-02c900a1a34f",
-    //   nome: "Cozinha Americana"
-    // });
-
-    // const atualizouCategoria: boolean = await categoriaRepo.atualizar(categoria.id,categoria);
-
-    // console.log(atualizouCategoria)
+    // console.log(await atualizarCategoriaUseCase.execute({
+    //     id: "0237166e-7920-4441-84f0-35e3fa1140d5",
+    //     nome: 'Cozinha Americana'
+    // }));
 
 
     /////////////////////
     //Deletar Categoria//
     /////////////////////
 
-    // const categoriaDeletada: boolean = await categoriaRepo.deletar("13bfd8ff-8452-4984-9570-02c900a1a34f");
-
-    // console.log(categoriaDeletada);
+    // console.log(await deletarCategoriaUseCase.execute("a24d244e-b0e8-4cbb-8065-1c372d3e364c"));
 
 
     //////////////////////////////
     //Recuperar Produto por UUID//
     //////////////////////////////
 
-    // const produtoRecuperado: Produto | null = await produtoRepo.recuperarPorUuid("1aa1b385-6d70-486e-830b-4accef6dd144");
+    // console.log(await recuperarProdutoPorIdUseCase.execute("fbfc2150-f804-4e9e-be82-f461ab7c1d2a"));
 
-    // console.log(produtoRecuperado);
-
-    // console.log(produtoRecuperado?.estaDeletado());
 
     ///////////////////
     //Inserir Produto//
     ///////////////////
-
+    
     // const categoria01: Categoria = Categoria.recuperar({
-    //    id: "2bfddfb4-6545-4b4b-95f0-daffed38cfe5",
-    //    nome: "Cozinha"
+    //    id: "cb6a8aa4-76ad-4ce0-9228-ba44c1ebfcc2",
+    //    nome: "Mesa"
     // });
 
     // const categoria02: Categoria = Categoria.recuperar({
-    //    id: "0629ee7a-5063-4565-bc97-363248fac22d",
-    //    nome: "Banho"
+    //    id: "fc59d6d0-bb22-4149-acdb-71b3ae751eff",
+    //    nome: "Cozinha"
     // });
 
+    // console.log(await inserirProdutoUseCase.execute({
+    //     nome: 'Forro de Mesa',
+    //     descricao: '100% Algodão',
+    //     valor: 70,
+    //     categorias: [categoria01, categoria02]
+    // }));
+    
     // const produto: Produto = Produto.criar({
     //    nome: 'Pano de Prato',
-    //    descricao: 'Algodão fio 60',
+    //    descricao: 'Algodão Fio 10',
     //    valor: 30,
-    //    categorias: [categoria01]
+    //    categorias: [categoria01, categoria02]
     // });
 
     // const produtoInserido = await produtoRepo.inserir(produto);
@@ -121,32 +112,32 @@ async function main() {
 	//Recuperar Todos os Produtos e Suas Categorias//
 	/////////////////////////////////////////////////
 		
-	const todosProdutos: Array<Produto> = await produtoRepo.recuperarTodos();
-
-	console.log(todosProdutos);
+	// console.log(await recuperarTodosProdutoUseCase.execute());
 
 
     ///////////////////////////////////////////////
 	//Atualizar Produto - Sem Atulizar Categorias//
 	///////////////////////////////////////////////
 
-    // const produto = {
-    //    id: "1aa1b385-6d70-486e-830b-4accef6dd144",
-    //    nome: "Toalha de Cama",
-    //    descricao: "Toalha de Algodão",
-    //    valor: 85
-    // }; 
-
-    // const atualizouProduto: boolean = await produtoRepo.atualizar(produto.id,produto);
+    // const categoria01: Categoria = Categoria.recuperar({
+    //    id: "915bf970-b302-44be-8e6b-4cfd8ea7ad97",
+    //    nome: "Banho"
+    // });
+       
+    // console.log(await atualizarProdutoUseCase.execute({
+    //     id: "fbfc2150-f804-4e9e-be82-f461ab7c1d2a",
+    //     nome: 'Toalha de Rosto',
+    //     descricao: '100% Algodão',
+    //     valor: 75,
+    //     categorias: [categoria01]
+    // }));
 
 
     ///////////////////
 	//Deletar Produto//
 	///////////////////
 		
-	// const produtoDeletado: boolean = await produtoRepo.deletar("0bd8dd01-47aa-47b7-a098-a774f3946b29");
-
-	// console.log(produtoDeletado);
+    // console.log(await deletarProdutoUseCase.execute("181bb2b8-7823-4b92-8ca1-9863bbd10f7a"));
 
 
     ////////////////////////////////////////////
