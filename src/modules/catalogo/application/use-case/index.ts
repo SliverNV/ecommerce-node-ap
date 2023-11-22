@@ -9,6 +9,10 @@ import { RecuperarTodosProdutoUseCase } from "./recuperar-todos-produtos/recuper
 import { InserirProdutoUseCase } from "./inserir-produto/inserir-produto.use-case";
 import { DeletarProdutoUseCase } from "./deletar-produto/deletar-produto.use-case";
 import { AtualizarProdutoUseCase } from "./atualizar-produto/atualizar-produto.use-case";
+import { AdicionarCategoriaProdutoUseCase } from "./adicionar-categoria-produto/adicionar-categoria-produto.use-case";
+import { AlterarStatusProdutoUseCase } from "./alterar-status-produto/alterar-status-produto.use-case";
+import { RemoverCategoriaProdutoUseCase } from "./remover-categoria-produto/remover-categoria-produto.use-case";
+import { RecuperarProdutosPorCategoria } from "./recuperar-produtos-por-categoria/recuperar-produtos-por-categoria.use-case";
 
 const recuperarCategoriaPorIdUseCase = new RecuperarCategoriaPorIdUseCase(categoriaRepositorio);
 const recuperarTodasCategoriasUseCase = new RecuperarTodasCategoriasUseCase(categoriaRepositorio);
@@ -21,6 +25,10 @@ const recuperarTodosProdutoUseCase = new RecuperarTodosProdutoUseCase(produtoRep
 const inserirProdutoUseCase = new InserirProdutoUseCase(produtoRepositorio);
 const deletarProdutoUseCase = new DeletarProdutoUseCase(produtoRepositorio);
 const atualizarProdutoUseCase = new AtualizarProdutoUseCase(produtoRepositorio);
+const adicionarCategoriaProdutoUseCase = new AdicionarCategoriaProdutoUseCase(produtoRepositorio);
+const removerCategoriaProdutoUseCase = new RemoverCategoriaProdutoUseCase(produtoRepositorio);
+const alterarStatusProdutoUseCase = new AlterarStatusProdutoUseCase(produtoRepositorio);
+const recuperarProdutosPorCategoria = new RecuperarProdutosPorCategoria(produtoRepositorio, categoriaRepositorio);
 
 
 export {
@@ -33,5 +41,9 @@ export {
     recuperarTodosProdutoUseCase,
     inserirProdutoUseCase,
     deletarProdutoUseCase,
-    atualizarProdutoUseCase
+    atualizarProdutoUseCase,
+    adicionarCategoriaProdutoUseCase,
+    alterarStatusProdutoUseCase,
+    removerCategoriaProdutoUseCase,
+    recuperarProdutosPorCategoria
 }

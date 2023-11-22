@@ -1,10 +1,10 @@
 import { Categoria } from "@modules/catalogo/domain/categoria/categoria.entity";
 import { ICategoriaRepository } from "@modules/catalogo/domain/categoria/categoria.repository.interface";
 import { IUseCase } from "@shared/application/use-case.interface";
-import { CategoriaApplicationExceptions } from "../../exception/categoria.application.exception";
+import { CategoriaApplicationExceptions } from "../../exceptions/categoria.application.exception";
 import { IProdutoRepository } from "@modules/catalogo/domain/produto/produto.repository.interface";
 import { Produto } from "@modules/catalogo/domain/produto/produto.entity";
-import { ProdutoApplicationExceptions } from "../../exception/produto.application.exception";
+import { ProdutoApplicationExceptions } from "../../exceptions/produto.application.exception";
 
 class DeletarProdutoUseCase implements IUseCase<string, boolean> {
     private _produtoRepositorio: IProdutoRepository<Produto>;

@@ -2,7 +2,7 @@ import { IUseCase } from "@shared/application/use-case.interface";
 import { RecuperarProdutoProps } from "@modules/catalogo/domain/produto/produto.types";
 import { IProdutoRepository } from "@modules/catalogo/domain/produto/produto.repository.interface";
 import { Produto } from "@modules/catalogo/domain/produto/produto.entity";
-import { ProdutoApplicationExceptions } from "../../exception/produto.application.exception";
+import { ProdutoApplicationExceptions } from "../../exceptions/produto.application.exception";
 
 class AtualizarProdutoUseCase implements IUseCase<RecuperarProdutoProps, boolean> {
     private _produtoRepositorio: IProdutoRepository<Produto>;
