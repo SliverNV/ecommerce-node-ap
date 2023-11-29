@@ -3,4 +3,17 @@
 @apiversion = api/v1
 
 ### Recuperar Um Categoria por ID
-GET http://{{host}}:{{port}}/{{apiversion}}/categorias/915bf970-b302-44be-8e6b-4cfd8ea7ad97
+GET http://{{host}}:{{port}}/{{apiversion}}/categorias/0237166e-7920-4441-84f0-35e3fa1140d5
+
+
+### Recuperar Todas as Categorias
+GET http://{{host}}:{{port}}/{{apiversion}}/categorias
+
+
+### Inserir Uma Categoria
+POST http://{{host}}:{{port}}/{{apiversion}}/categorias
+Content-type: application/json
+
+{
+    "nome":"Sala de Estar"
+}
