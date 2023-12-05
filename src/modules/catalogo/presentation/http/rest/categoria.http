@@ -5,15 +5,25 @@
 ### Recuperar Um Categoria por ID
 GET http://{{host}}:{{port}}/{{apiversion}}/categorias/0237166e-7920-4441-84f0-35e3fa1140d5
 
-
 ### Recuperar Todas as Categorias
 GET http://{{host}}:{{port}}/{{apiversion}}/categorias
-
 
 ### Inserir Uma Categoria
 POST http://{{host}}:{{port}}/{{apiversion}}/categorias
 Content-type: application/json
 
 {
-    "nome":"Sala de Estar"
+    "nome":"Sala de Visita"
 }
+
+### Atualizar Categoria
+PUT http://{{host}}:{{port}}/{{apiversion}}/categorias/0237166e-7920-4441-84f0-35e3fa1140d5
+Content-type: application/json 
+
+{
+    "id": "0237166e-7920-4441-84f0-35e3fa1140d5",
+    "nome":"Cozinha Italiana"
+}
+
+### Deletar Categoria
+DELETE http://{{host}}:{{port}}/{{apiversion}}/categorias/14b6afe5-b4fb-4d26-b97d-cb72543eddf2
