@@ -13,16 +13,16 @@ POST http://{{host}}:{{port}}/{{apiversion}}/categorias
 Content-type: application/json
 
 {
-    "nome":"Sala de Visita"
+    "nomes":"Sala de Visita"
 }
 
 ### Atualizar Categoria
-PUT http://{{host}}:{{port}}/{{apiversion}}/categorias/0237166e-7920-4441-84f0-35e3fa1140d5
+PUT http://{{host}}:{{port}}/{{apiversion}}/categorias/e39f39e3-ce2b-429d-96cd-caf0f72d4ee6
 Content-type: application/json 
 
 {
-    "id": "0237166e-7920-4441-84f0-35e3fa1140d5",
-    "nome":"Cozinha Italiana"
+    "id": "e39f39e3-ce2b-429d-96cd-caf0f72d4ee6",
+    "nome":"Sala Italiana"
 }
 
 ### Deletar Categoria
