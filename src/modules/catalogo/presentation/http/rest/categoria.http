@@ -3,7 +3,7 @@
 @apiversion = api/v1
 
 ### Recuperar Um Categoria por ID
-GET http://{{host}}:{{port}}/{{apiversion}}/categorias/0237166e-7920-4441-84f0-35e3fa1140d5
+GET http://{{host}}:{{port}}/{{apiversion}}/categorias/9f513a1f-2510-4bd7-ba3c-95bade9b1271
 
 ### Recuperar Todas as Categorias
 GET http://{{host}}:{{port}}/{{apiversion}}/categorias
@@ -13,16 +13,16 @@ POST http://{{host}}:{{port}}/{{apiversion}}/categorias
 Content-type: application/json
 
 {
-    "nomes":"Sala de Visita"
+    "nome":"Cozinha"
 }
 
 ### Atualizar Categoria
-PUT http://{{host}}:{{port}}/{{apiversion}}/categorias/e39f39e3-ce2b-429d-96cd-caf0f72d4ee6
+PUT http://{{host}}:{{port}}/{{apiversion}}/categorias/b874dc31-5a75-4ea1-81c7-a2257b956dc4
 Content-type: application/json 
 
 {
-    "id": "e39f39e3-ce2b-429d-96cd-caf0f72d4ee6",
-    "nome":"Sala Italiana"
+    "id": "b874dc31-5a75-4ea1-81c7-a2257b956dc4",
+    "nome":"Cozinha Americana"
 }
 
 ### Deletar Categoria

@@ -4,7 +4,7 @@ import { Produto } from "@modules/catalogo/domain/produto/produto.entity";
 import { ProdutoMap } from "@modules/catalogo/infra/mappers/produto.map";
 import { IProduto } from "@modules/catalogo/domain/produto/produto.types";
 
-class RecuperarTodosProdutoUseCase implements IUseCase<void, Array<IProduto>> {
+class RecuperarTodosProdutosUseCase implements IUseCase<void, Array<IProduto>> {
     private _produtoRepositorio: IProdutoRepository<Produto>;
 
     constructor(repositorio: IProdutoRepository<Produto>) {
@@ -23,4 +23,4 @@ class RecuperarTodosProdutoUseCase implements IUseCase<void, Array<IProduto>> {
     }
 }
 
-export { RecuperarTodosProdutoUseCase };
+export { RecuperarTodosProdutosUseCase };

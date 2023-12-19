@@ -7,7 +7,7 @@ import { DomainException } from '@shared/domain/domain.exception';
 import { prisma } from '@main/infra/database/orm/prisma/client';
 import { categoriaRepositorio as categoriaRepo } from '@modules/catalogo/infra/database';
 import { produtoRepositorio as produtoRepo } from '@modules/catalogo/infra/database';
-import { atualizarCategoriaUseCase, atualizarProdutoUseCase, deletarCategoriaUseCase, deletarProdutoUseCase, inserirCategoriaUseCase, inserirProdutoUseCase, recuperarCategoriaPorIdUseCase, recuperarProdutoPorIdUseCase, recuperarTodasCategoriasUseCase, recuperarTodosProdutoUseCase } from '@modules/catalogo/application/use-case';
+import { atualizarCategoriaUseCase, atualizarProdutoUseCase, deletarCategoriaUseCase, deletarProdutoUseCase, inserirCategoriaUseCase, inserirProdutoUseCase, recuperarCategoriaPorIdUseCase, recuperarProdutoPorIdUseCase, recuperarTodasCategoriasUseCase, recuperarTodosProdutosUseCase } from '@modules/catalogo/application/use-cases';
 
 
 async function main() {
@@ -75,17 +75,17 @@ async function main() {
     // console.log(await recuperarProdutoPorIdUseCase.execute("fbfc2150-f804-4e9e-be82-f461ab7c1d2a"));
 
 
-    ///////////////////
-    //Inserir Produto//
-    ///////////////////
+    ////////////////////
+    //Inserrir Produto//
+    ////////////////////
     
     // const categoria01: Categoria = Categoria.recuperar({
-    //    id: "cb6a8aa4-76ad-4ce0-9228-ba44c1ebfcc2",
+    //    id: "49968897-f39f-4daa-80d4-d0577dc4ecb6",
     //    nome: "Mesa"
     // });
 
     // const categoria02: Categoria = Categoria.recuperar({
-    //    id: "fc59d6d0-bb22-4149-acdb-71b3ae751eff",
+    //    id: "bbe3e6f3-cf62-4fc1-9ec1-9bff53237062",
     //    nome: "Cozinha"
     // });
 
@@ -112,7 +112,7 @@ async function main() {
 	//Recuperar Todos os Produtos e Suas Categorias//
 	/////////////////////////////////////////////////
 		
-	// console.log(await recuperarTodosProdutoUseCase.execute());
+	// console.log(await recuperarTodosProdutosUseCase.execute());
 
 
     ///////////////////////////////////////////////

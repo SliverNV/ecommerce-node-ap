@@ -5,7 +5,7 @@ import { InserirCategoriaUseCase } from "./inserir-categoria/inserir-categoria.u
 import { AtualizarCategoriaUseCase } from "./atualizar-categoria/atualizar-categoria.use-case";
 import { DeletarCategoriaUseCase } from "./deletar-categoria/deletar-categoria.use-case";
 import { RecuperarProdutoPorIdUseCase } from "./recuperar-produto-por-id/recuperar-produto-por-id.use-case";
-import { RecuperarTodosProdutoUseCase } from "./recuperar-todos-produtos/recuperar-todos-produtos.use-case";
+import { RecuperarTodosProdutosUseCase } from "./recuperar-todos-produtos/recuperar-todos-produtos.use-case";
 import { InserirProdutoUseCase } from "./inserir-produto/inserir-produto.use-case";
 import { DeletarProdutoUseCase } from "./deletar-produto/deletar-produto.use-case";
 import { AtualizarProdutoUseCase } from "./atualizar-produto/atualizar-produto.use-case";
@@ -21,7 +21,7 @@ const atualizarCategoriaUseCase = new AtualizarCategoriaUseCase(categoriaReposit
 const deletarCategoriaUseCase = new DeletarCategoriaUseCase(categoriaRepositorio);
 
 const recuperarProdutoPorIdUseCase = new RecuperarProdutoPorIdUseCase(produtoRepositorio);
-const recuperarTodosProdutoUseCase = new RecuperarTodosProdutoUseCase(produtoRepositorio);
+const recuperarTodosProdutosUseCase = new RecuperarTodosProdutosUseCase(produtoRepositorio);
 const inserirProdutoUseCase = new InserirProdutoUseCase(produtoRepositorio);
 const deletarProdutoUseCase = new DeletarProdutoUseCase(produtoRepositorio);
 const atualizarProdutoUseCase = new AtualizarProdutoUseCase(produtoRepositorio);
@@ -38,7 +38,7 @@ export {
     atualizarCategoriaUseCase,
     deletarCategoriaUseCase,
     recuperarProdutoPorIdUseCase,
-    recuperarTodosProdutoUseCase,
+    recuperarTodosProdutosUseCase,
     inserirProdutoUseCase,
     deletarProdutoUseCase,
     atualizarProdutoUseCase,
