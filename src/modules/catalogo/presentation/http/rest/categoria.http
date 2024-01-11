@@ -11,9 +11,10 @@ GET http://{{host}}:{{port}}/{{apiversion}}/categorias
 ### Inserir Uma Categoria
 POST http://{{host}}:{{port}}/{{apiversion}}/categorias
 Content-type: application/json
+Authorization: Bearer <token>
 
 {
-    "nome":"Cozinha"
+    "nome":"Escritório"
 }
 
 ### Atualizar Categoria

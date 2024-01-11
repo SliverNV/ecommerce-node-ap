@@ -1,4 +1,4 @@
-import { IDatasControle, KeysDatasControle } from "@shared/domain/date.types";
+import { IDatasControle, KeysDatasControle } from "@shared/domain/datas.types";
 
 //Todos os atributos/propriedades que uma categoria deve ter no sistema
 //Auxilia na criação de invariantes e modelos ricos
