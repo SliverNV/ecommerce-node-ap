@@ -1,4 +1,4 @@
-import { IDatasControle, KeysDatasControle } from "@shared/domain/date.types";
+import { IDatasControle, KeysDatasControle } from "@shared/domain/datas.types";
 import { ICategoria } from "../categoria/categoria.types";
 
 enum StatusProduto {
