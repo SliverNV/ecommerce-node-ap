@@ -1,8 +1,8 @@
 import express, { Application } from "express";
 import { afterEach, beforeAll, describe, expect, test, vi } from "vitest";
 import { MockProxy, mock, mockReset } from "vitest-mock-extended";
-import { RecuperarCategoriaPorIdExpressController } from "./controllers/recuperar-categoria-por-id.express.controller";
-import { InserirCategoriaExpressController } from "./controllers/inserir-categoria.express.controller";
+import { RecuperarCategoriaPorIdExpressController } from "./controllers/recuperar-categoria-por-id/recuperar-categoria-por-id.express.controller";
+import { InserirCategoriaExpressController } from "./controllers/inserir-categoria/inserir-categoria.express.controller";
 import { CriarCategoriaProps, ICategoria } from "@modules/catalogo/domain/categoria/categoria.types";
 import request from 'supertest';
 

@@ -1,0 +1,106 @@
+@host = localhost
+@port = 3000
+@apiversion = api/v1
+
+### Recuperar Um Produto Por ID
+GET http://{{host}}:{{port}}/{{apiversion}}/produtos/a3f24491-60ca-4949-8bf8-c0e6ec143a15
+
+### Recuperar Todos Os Produtos
+GET http://{{host}}:{{port}}/{{apiversion}}/produtos
+
+### Inserir Um Produto
+POST http://{{host}}:{{port}}/{{apiversion}}/produtos
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZiMDYwNWFjLWUwMWQtNGI0ZC04NGJkLTIwMjJjYWIzMjM1YyIsIm5vbWUiOiJKb3JnZSIsImVtYWlsIjoiam9yZ2VAbWFpbC5jb20iLCJ0aXBvIjoiQURNSU5JU1RSQURPUiIsImlhdCI6MTcwNTY5NzQ4NSwiZXhwIjoxNzA1NzAxMDg1fQ.hdILniNyMzqWJGo5zUQSldXBoWql7OCq3kuHpu9aI8s
+
+{
+    "nome":"Camisa Social Americana",
+    "descricao": "Beje varios tamanhos",
+    "valor": 180,
+    "categorias": [
+        {
+            "id": "6c49a7af-ac8a-4aff-a52a-7ae060350ed5",
+            "nome": "Roupas"
+        }
+    ]
+}
+
+### Atualizar Um Produto
+PUT http://{{host}}:{{port}}/{{apiversion}}/products/570fa8b1-5865-41bb-aaec-2f8da430774c
+Content-type: application/json
+Authorization: Barrer token
+
+{
+    "id": "570fa8b1-5865-41bb-aaec-2f8da430774c",
+    "nome": "Toalha",
+    "descricao": "Toalha para banho",
+    "valor": 50,
+    "categorias": [
+      {
+        "id": "1aa1a296-85bf-49be-8173-17c33b70073c",
+        "nome": "Banho"
+      }
+    ]
+  }
+
+### Deletar Um Produto
+DELETE http://{{host}}:{{port}}/{{apiversion}}/products/19245b61-aade-443c-9176-b740e11796f4
+Authorization: Barrer token
+
+### Adicionar Categoria Ao Produto
+POST http://{{host}}:{{port}}/{{apiversion}}/products/add-category/570fa8b1-5865-41bb-aaec-2f8da430774c
+Content-Type: application/json
+Authorization: Barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZiMDYwNWFjLWUwMWQtNGI0ZC04NGJkLTIwMjJjYWIzMjM1YyIsIm5vbWUiOiJKb3JnZSIsImVtYWlsIjoiam9yZ2VAbWFpbC5jb20iLCJ0aXBvIjoiQURNSU5JU1RSQURPUiIsImlhdCI6MTcwNTYwOTI3OSwiZXhwIjoxNzA1NjEyODc5fQ.wyk0ai4F-zZ-3dakpE_DmI0p3ytMTATpQSZLgoZwwPo
+
+{
+  "id": "570fa8b1-5865-41bb-aaec-2f8da430774c",
+  "nome": "Toalha",
+  "descricao": "Toalha para banho",
+  "valor": 50,
+  "categorias": [
+    {
+      "id": "1aa1a296-85bf-49be-8173-17c33b70073c",
+      "nome": "Banho"
+    }
+  ]
+}
+
+### Remover Categoria do Produto
+DELETE http://{{host}}:{{port}}/{{apiversion}}/products/remove-category/dab5bed8-1241-4611-b916-8f9ed1059451
+Content-Type: application/json
+Authorization: Barrer token
+
+{
+  "id": "570fa8b1-5865-41bb-aaec-2f8da430774c",
+  "nome": "Toalha",
+  "descricao": "Toalha para banho",
+  "valor": 50,
+  "categorias": [
+    {
+      "id": "1aa1a296-85bf-49be-8173-17c33b70073c",
+      "nome": "Banho"
+    }
+  ]
+}
+
+### Recuperar Produtos Por Categoria
+GET http://{{host}}:{{port}}/{{apiversion}}/products/category/6039b800-646c-4825-8dc5-b7c5f11dc0ff
+
+### Alterar Status Do Produto
+PUT http://{{host}}:{{port}}/{{apiversion}}/products/a3f24491-60ca-4949-8bf8-c0e6ec143a15/status
+Content-Type: application/json
+Authorization: Barrer token
+
+{
+  "id": "a3f24491-60ca-4949-8bf8-c0e6ec143a15",
+  "nome": "Chuveiro elétrico",
+  "descricao": "Um ótimo chuveiro elétrico, super moderno",
+  "valor": 450,
+  "categorias": [
+    {
+      "id": "7cb1c743-09b5-4532-bb54-91f29b765b5e",
+      "nome": "Banho"
+    }
+  ],
+  "status": "ACTIVO"
+}

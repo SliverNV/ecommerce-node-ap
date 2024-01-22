@@ -2,19 +2,19 @@
 @port = 3000
 @apiversion = api/v1
 
-### Recuperar Um Categoria por ID
+### Recuperar Um Categoria Por ID
 GET http://{{host}}:{{port}}/{{apiversion}}/categorias/9f513a1f-2510-4bd7-ba3c-95bade9b1271
 
-### Recuperar Todas as Categorias
+### Recuperar Todas As Categorias
 GET http://{{host}}:{{port}}/{{apiversion}}/categorias
 
 ### Inserir Uma Categoria
 POST http://{{host}}:{{port}}/{{apiversion}}/categorias
 Content-type: application/json
-Authorization: Bearer <token>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZiMDYwNWFjLWUwMWQtNGI0ZC04NGJkLTIwMjJjYWIzMjM1YyIsIm5vbWUiOiJKb3JnZSIsImVtYWlsIjoiam9yZ2VAbWFpbC5jb20iLCJ0aXBvIjoiQURNSU5JU1RSQURPUiIsImlhdCI6MTcwNTM2NDEzOSwiZXhwIjoxNzA1MzY3NzM5fQ.qKPKMU3g8MVj_lm6A1x5rObz2ER0WW9b53nkkD_8ypc
 
 {
-    "nome":"Escritório"
+    "nome":"Roupas"
 }
 
 ### Atualizar Categoria
